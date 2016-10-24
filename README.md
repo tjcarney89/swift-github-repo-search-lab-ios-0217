@@ -1,4 +1,4 @@
-# Github-Repo-Search
+# Swift Github Repo Search
 
 ## Demo
 
@@ -52,6 +52,8 @@ AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
 ```
 
 ## Instructions
+
+[https://developer.apple.com/swift/blog/?id=37](Apple's thoughts and feelings on JSON with Swift)
 
 1. Bring over your code from the github-repo-starring lab. After dragging over your files, make sure you reestablish any connections needed in your project file. You will need:
 
