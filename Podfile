@@ -7,6 +7,7 @@ target 'swift-github-repo-search-lab' do
 
   # Pods for swift-github-repo-search-lab
   pod 'Alamofire', '~> 4.0'
+  pod 'OHHTTPStubs'
 
 end
 
