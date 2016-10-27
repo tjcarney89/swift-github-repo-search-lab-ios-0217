@@ -60,6 +60,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1B15A1371DC29D7600B15C9F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1BF884AE1DBE950C001E9E9B /* Assets.xcassets */,
+				1BF884B01DBE950C001E9E9B /* LaunchScreen.storyboard */,
+				1BF884B31DBE950C001E9E9B /* Info.plist */,
+				1B6A6D031DBFA1550029AA04 /* repositories.json */,
+				1B6A6D011DBFA1550029AA04 /* not_starred.json */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		1BF8849B1DBE950C001E9E9B = {
 			isa = PBXGroup;
 			children = (
@@ -88,11 +100,7 @@
 				1B6A6D001DBFA1550029AA04 /* GithubRepository.swift */,
 				1B6A6D021DBFA1550029AA04 /* ReposDataStore.swift */,
 				1B6A6D051DBFA1550029AA04 /* Secrets.swift */,
-				1B6A6D031DBFA1550029AA04 /* repositories.json */,
-				1B6A6D011DBFA1550029AA04 /* not_starred.json */,
-				1BF884AE1DBE950C001E9E9B /* Assets.xcassets */,
-				1BF884B01DBE950C001E9E9B /* LaunchScreen.storyboard */,
-				1BF884B31DBE950C001E9E9B /* Info.plist */,
+				1B15A1371DC29D7600B15C9F /* Resources */,
 			);
 			path = "swift-github-repo-search-lab";
 			sourceTree = "<group>";
