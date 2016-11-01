@@ -38,10 +38,10 @@ Alamofire.request(githubURL).responseJSON { response in
 }
 ```
 
-###### 3. Use appropriate HTTP Method verb in your request
+###### 3. Use the appropriate HTTP Method verb in your request
 ```
 // GET data with parameters
-let params = [name : keyword]
+let params = [name : keyword] // Parameters are optional
 
 Alamofire.request(.GET, url, parameters: params, encoding: .URL, headers: nil).validate().responseJSON { (response) 
 	//pass data back here
