@@ -4,6 +4,7 @@
 target 'swift-github-repo-search-lab' do
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
+  inherit! :search_paths
 
   # Pods for swift-github-repo-search-lab
   pod 'Alamofire', '~> 4.0'
