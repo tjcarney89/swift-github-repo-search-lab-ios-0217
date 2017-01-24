@@ -78,7 +78,7 @@ Alamofire.request(.DELETE, url).responseJSON { (response) in
 
   * `Main.storyboard` (you may need to recreate your storyboard instead of dragging it over)
 
-2. Write a method in `GithubAPIClient` that searches for repos from the text provided in the alert controller (which you will create). Take a look at the [repo search documentation](https://developer.github.com/v3/search/#search-repositories) and implement the appropriate method to do a search for repositories.
+2. Write a method in `GithubAPIClient` called `searchForRepo` that searches for repos from the text provided in the alert controller (which you will create). Take a look at the [repo search documentation](https://developer.github.com/v3/search/#search-repositories) and implement the appropriate method to do a search for repositories.
 
 3. Add a `UIBarButtonItem` such as `Search` to your TableViewController in Storyboard. When a user taps the button, it should display a `UIAlertController` that prompts the user to enter a search query. Add a `UIAlertAction` to initiate the search. [This](https://www.hackingwithswift.com/read/5/3/pick-a-word-any-word-uialertcontroller) is a good resource on `UIAlertController`.
 
