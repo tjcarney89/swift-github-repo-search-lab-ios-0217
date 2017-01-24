@@ -8,6 +8,14 @@ target 'swift-github-repo-search-lab' do
 
   # Pods for swift-github-repo-search-lab
   pod 'Alamofire', '~> 4.0'
+  
+  target 'swift-github-repo-search-labTests' do
+      inherit! :search_paths
+      pod 'OHHTTPStubs'
+      pod 'Quick'
+      pod 'Nimble'
+      pod 'KIF', '~> 3.0', :configurations => ['Debug']
+  end
 
 end
 
