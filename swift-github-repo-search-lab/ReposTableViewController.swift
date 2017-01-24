@@ -18,7 +18,7 @@ class ReposTableViewController: UITableViewController {
         self.tableView.accessibilityLabel = "tableView"
         self.tableView.accessibilityIdentifier = "tableView"
         
-        store.getRepositoriesWithCompletion {
+        store.getRepositories {
             OperationQueue.main.addOperation({ 
                 self.tableView.reloadData()
             })
@@ -66,5 +66,32 @@ class ReposTableViewController: UITableViewController {
             ok.accessibilityLabel = "OK"
             self.present(alertController, animated: true, completion: nil)
         }
+    
+    @IBAction func searchBtnTapped(_ sender: Any) {
+        let ac = UIAlertController(title: "Search for Repo", message: nil, preferredStyle: .alert)
+        ac.addTextField()
+        
+        let submitAction = UIAlertAction(title: "Submit", style: .default) { [unowned ac] _ in
+            let answer = ac.textFields![0].text
+            if let searchName = answer {
+                self.store.searchRepo(searchName, completion: {
+                    OperationQueue.main.addOperation({
+                        self.tableView.reloadData()
+                    })
+                })
+            }
+            
+            
+        }
+        
+        ac.addAction(submitAction)
+        
+        present(ac, animated: true)
+        
+        
+        
+    }
+    
+    
 
 }

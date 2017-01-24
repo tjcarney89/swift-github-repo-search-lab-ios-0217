@@ -75,5 +75,24 @@ class GithubAPIClient {
         task.resume()
     }
     
+    class func searchForRepo(_ name:String, completion: @escaping ([Any]) -> () ){
+        let urlString = "\(githubAPIURL)/search/repositories?q=\(name)"
+        guard let url = URL(string: urlString) else { return }
+        let request = URLRequest(url: url)
+        let session = URLSession.shared
+        let task = session.dataTask(with: request, completionHandler: { (data, response, error) in
+            guard let data = data else { fatalError("Unable to get data \(error?.localizedDescription)") }
+            
+            if let responseDictionary = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                if let repoArray = responseDictionary?["items"] as? [Any] {
+                    completion(repoArray)
+                }
+                
+            }
+        })
+        task.resume()
+        
+    }
+    
 }
 
