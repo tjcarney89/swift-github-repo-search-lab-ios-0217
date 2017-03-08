@@ -58,7 +58,7 @@ class GithubAPIClientSpec: QuickSpec {
         describe("getRepositories") {
             it("should get the proper repositories from Github") {
                 waitUntil(action: { (done) in
-                    GithubAPIClient.getRepositoriesWithCompletion({ repos in
+                    GithubAPIClient.getRepositories(with: { repos in
                         
                         expect(repos).toNot(beNil())
                         expect(repos.count).to(equal(2))
@@ -72,7 +72,7 @@ class GithubAPIClientSpec: QuickSpec {
         describe("searchRepositories") {
             it("should get the proper repositories from Github when searched") {
                 waitUntil(action: { (done) in
-                    GithubAPIClient.searchForRepo("Alamofire", completion: { (repos) in
+                    GithubAPIClient.searchForRepo(search: "Alamofire", completion: { (repos) in
                         expect(repos).toNot(beNil())
                         if let firstRepo = repos.first {
                             let dict = firstRepo as! [String: Any]
@@ -100,7 +100,7 @@ class GithubAPIClientSpec: QuickSpec {
 
                 }
                 waitUntil(action: { (done) in
-                    GithubAPIClient.checkIfRepositoryIsStarred("wycats/merb-core", completion: { (starred) in
+                    GithubAPIClient.checkIfRepositoryIsStarred(fullName: "wycats/merb-core", completion: { (starred) in
                         expect(starred).to(beFalsy())
                         done()
                     })
@@ -116,7 +116,7 @@ class GithubAPIClientSpec: QuickSpec {
                     
                 }
                 waitUntil(action: { (done) in
-                    GithubAPIClient.checkIfRepositoryIsStarred("wycats/merb-core", completion: { (starred) in
+                    GithubAPIClient.checkIfRepositoryIsStarred(fullName: "wycats/merb-core", completion: { (starred) in
                         expect(starred).to(beTruthy())
                         done()
                     })
